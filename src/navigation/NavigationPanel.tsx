@@ -1,16 +1,13 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 
-import { APP_PATH } from '../constants/application';
+import { APP_PATH, DRAWER_WIDTH } from '../constants/application';
 import MenuItems from './MenuItems';
-
-const DRAWER_WIDTH = '15rem';
 
 const USER = {
   name: 'Jessica To',
@@ -69,18 +66,17 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const NavigationPanel = () => {
+interface NavigationPanelProps {
+  drawerOpen: boolean
+};
+
+const NavigationPanel = (props: NavigationPanelProps) => {
   const classes = useStyles();
+  const { drawerOpen } = props;
 
   return (
-    <Drawer
-      className={classes.drawer}
-      variant="permanent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
-    >
-      <Toolbar />
+    <>
+      {drawerOpen ? null : <Toolbar />}
       <div className={classes.drawerWrapper}>
         <div className={classes.avatarWrapper}>
           <Avatar
@@ -103,7 +99,7 @@ const NavigationPanel = () => {
           {MENU_ITEMS.map((item, idx) => <MenuItems {...item} key={idx} />)}
         </List>
       </div>
-    </Drawer>
+    </>
   );
 };
 
