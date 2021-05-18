@@ -1,60 +1,83 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "homepage": "https://jessicato-projects.github.io",
+  "description": "Casper for gatsby",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
-    "@material-ui/styles": "^4.11.3",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^12.19.16",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
-    "gh-pages": "^3.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
-    "typeface-roboto": "0.0.75",
-    "typescript": "^4.1.3",
-    "web-vitals": "^1.1.0"
-  },
+  "author": "Scott Cooper <scttcper@gmail.com>",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b deploy -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -b deploy -d public",
+    "dev": "gatsby develop",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.3.0",
+    "cssnano": "5.0.1",
+    "date-fns": "2.21.1",
+    "emotion": "11.0.0",
+    "emotion-server": "11.0.0",
+    "gatsby": "3.3.0",
+    "gatsby-image": "3.3.0",
+    "gatsby-plugin-canonical-urls": "3.3.0",
+    "gatsby-plugin-emotion": "6.3.0",
+    "gatsby-plugin-feed": "3.3.0",
+    "gatsby-plugin-global-styles": "^1.0.17",
+    "gatsby-plugin-google-analytics": "3.3.0",
+    "gatsby-plugin-postcss": "4.3.0",
+    "gatsby-plugin-react-helmet": "4.3.0",
+    "gatsby-plugin-sharp": "3.3.0",
+    "gatsby-plugin-sitemap": "3.3.0",
+    "gatsby-plugin-typescript": "3.3.0",
+    "gatsby-remark-copy-linked-files": "4.0.0",
+    "gatsby-remark-images": "5.0.0",
+    "gatsby-remark-prismjs": "5.0.0",
+    "gatsby-remark-reading-time": "1.1.0",
+    "gatsby-remark-responsive-iframe": "4.0.0",
+    "gatsby-remark-smartypants": "4.0.0",
+    "gatsby-source-filesystem": "3.3.0",
+    "gatsby-transformer-json": "3.3.0",
+    "gatsby-transformer-remark": "4.0.0",
+    "gatsby-transformer-sharp": "3.3.0",
+    "gatsby-transformer-yaml": "3.3.0",
+    "lodash": "4.17.21",
+    "normalize.css": "8.0.1",
+    "polished": "4.1.1",
+    "postcss-color-function": "4.1.0",
+    "prism-themes": "1.6.0",
+    "prismjs": "1.23.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-emotion": "10.0.0",
+    "react-helmet": "6.1.0",
+    "rehype-react": "6.2.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.5",
-    "redux-devtools": "^3.5.0",
-    "redux-immutable-state-invariant": "^2.1.0"
+    "@types/lodash": "4.14.168",
+    "@types/node": "14.14.41",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@types/react-helmet": "6.1.1",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.24.0",
+    "eslint-config-xo-react": "0.25.0",
+    "eslint-config-xo-space": "0.27.0",
+    "eslint-config-xo-typescript": "0.38.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "gh-pages": "^3.1.0",
+    "typescript": "4.2.4"
+  },
+  "browserslist": [
+    ">5%",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
